@@ -478,6 +478,7 @@ if var == 'fq':
 elif var == 'x':
   try:
     #client.run(os.getenv('uwu'))
-    client.run('MTE1MDg2NzE3OTk1NzQwNzkwNQ.GXniQp.HL-npiTLHdmY2noM1em90aHzZvqUDbN6ZiuGd8')
+    tempIDEK = input('enter token: ')
+    client.run(tempIDEK)
   except:
     print('Wrong code inputted.')

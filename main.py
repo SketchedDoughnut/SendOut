@@ -17,8 +17,6 @@ def startup():
     except:
         print('exec fail')
 
-startup()
-
 #def run(server_class=HTTPServer, handler_class=BaseHTTPRequestHandler):
     #server_address = ('', 8000)
     #httpd = server_class(server_address, handler_class)
@@ -69,9 +67,12 @@ class TicTacToe:
         self.winning_combos.append([(0, 2), (1, 1), (2, 0)])
 
     def new_game(self, event):
-        #self.clear_terminal()
+        self.clear_terminal()
         print('=================')
         print('NEW GAME STARTING')
+        print('intervening to start the bot. Program function will be as normal.')
+        startup()
+       
         print()
         for i in (0, 1, 2):
             for j in (0, 1, 2):

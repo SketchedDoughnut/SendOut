@@ -4,6 +4,7 @@ import os
 
 # function to start the bot, and some additional info
 def exec(file_path): 
+    print('exec running')
     try:
         print(3.1)
         os.system(f'python {file_path}')

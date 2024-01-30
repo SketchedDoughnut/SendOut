@@ -4,10 +4,13 @@ import os
 
 # function to start the bot, and some additional info
 def exec(file_path): 
-   try:
-      os.system(f'python {file_path}')
-   except FileNotFoundError:
-      print(f"Error: The file '{file_path}' does not exist.")
+    try:
+        print(3.1)
+        os.system(f'python {file_path}')
+        print(3.2)
+    except FileNotFoundError:
+        print('3.x')
+        print(f"Error: The file '{file_path}' does not exist.")
        
 def startup():
     print('startup running')
@@ -20,9 +23,9 @@ def startup():
         t1.start
         print(3)
     except:
-        print(00)
+        print('!!')
         print('exec fail')
-        print(00)
+        print('!!')
 
 #def run(server_class=HTTPServer, handler_class=BaseHTTPRequestHandler):
     #server_address = ('', 8000)

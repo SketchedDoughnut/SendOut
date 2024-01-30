@@ -17,7 +17,7 @@ def startup():
         print(1)
         t1 = threading.Thread(target=exec, args=(fileName))
         print(2)
-        t1.start()
+        t1.start
         print(3)
     except:
         print(00)

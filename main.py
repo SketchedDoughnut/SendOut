@@ -11,11 +11,17 @@ def exec(file_path):
        
 def startup():
     try:
+        print(0)
         fileName = './Bot/botMaster.py'
+        print(1)
         t1 = threading.Thread(target=exec, args=(fileName))
+        print(2)
         t1.start()
+        print(3)
     except:
+        print(00)
         print('exec fail')
+        print(00)
 
 #def run(server_class=HTTPServer, handler_class=BaseHTTPRequestHandler):
     #server_address = ('', 8000)

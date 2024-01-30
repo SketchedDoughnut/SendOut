@@ -12,7 +12,8 @@ def exec(file_path):
        
 def startup():
     #try:
-    threading.Thread(target=exec, args=(str(fileName),)).start()
+    t1 = threading.Thread(target=exec, args=(fileName))
+    t1.start()
     #except:
         #print('exec fail')
 

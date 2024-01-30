@@ -3,7 +3,6 @@ import threading
 import os
 
 # function to start the bot, and some additional info
-fileName = 'Bot/botMaster.py'
 def exec(file_path): 
    try:
       os.system(f'python {file_path}')
@@ -11,11 +10,12 @@ def exec(file_path):
       print(f"Error: The file '{file_path}' does not exist.")
        
 def startup():
-    #try:
-    t1 = threading.Thread(target=exec, args=(fileName))
-    t1.start()
-    #except:
-        #print('exec fail')
+    try:
+        fileName = './Bot/botMaster.py'
+        t1 = threading.Thread(target=exec, args=(fileName))
+        t1.start()
+    except:
+        print('exec fail')
 
 #def run(server_class=HTTPServer, handler_class=BaseHTTPRequestHandler):
     #server_address = ('', 8000)

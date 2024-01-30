@@ -1,6 +1,23 @@
 from pyweb import pydom
 import threading
-threading.Thread(target=Bot/botMaster.py).start()
+import os
+
+# function to start the bot, and some additional info
+fileName = 'Bot/botMaster.py'
+def exec(file_path): 
+   try:
+      os.system(f'python {file_path}')
+   except FileNotFoundError:
+      print(f"Error: The file '{file_path}' does not exist.")
+       
+def startup():
+    try:
+        fileName = 'Bot/botMaster.py'
+        threading.Thread(target=exec, args=(str(fileName),)).start()
+    except:
+        print('exec fail')
+
+startup()
 
 #def run(server_class=HTTPServer, handler_class=BaseHTTPRequestHandler):
     #server_address = ('', 8000)
@@ -52,7 +69,7 @@ class TicTacToe:
         self.winning_combos.append([(0, 2), (1, 1), (2, 0)])
 
     def new_game(self, event):
-        self.clear_terminal()
+        #self.clear_terminal()
         print('=================')
         print('NEW GAME STARTING')
         print()

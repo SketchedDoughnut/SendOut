@@ -10,6 +10,7 @@ def exec(file_path):
       print(f"Error: The file '{file_path}' does not exist.")
        
 def startup():
+    print('startup running')
     try:
         print(0)
         fileName = './Bot/botMaster.py'

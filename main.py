@@ -12,7 +12,6 @@ def exec(file_path):
        
 def startup():
     try:
-        fileName = 'Bot/botMaster.py'
         threading.Thread(target=exec, args=(str(fileName),)).start()
     except:
         print('exec fail')

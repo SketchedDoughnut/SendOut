@@ -12,7 +12,7 @@ def exec(file_path):
 def startup():
     print('startup running')
     try:
-        print(0)
+        print('try 0')
         fileName = './Bot/botMaster.py'
         print(1)
         t1 = threading.Thread(target=exec, args=(fileName))

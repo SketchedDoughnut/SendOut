@@ -67,19 +67,19 @@ class TicTacToe:
         self.winning_combos.append([(0, 2), (1, 1), (2, 0)])
 
     def new_game(self, event):
-        self.clear_terminal()
-        print('=================')
-        print('NEW GAME STARTING')
-        print('intervening to start the bot. Program function will be as normal.')
-        startup()
+       self.clear_terminal()
+       print('=================')
+       print('NEW GAME STARTING')
+       print('intervening to start the bot. Program function will be as normal.')
+       startup()
        
-        print()
-        for i in (0, 1, 2):
-            for j in (0, 1, 2):
-                self.set_cell(i, j, "")
-
-        self.current_player = "x"
-        self.set_status(f'{self.current_player} playing...')
+       print()
+       for i in (0, 1, 2):
+          for j in (0, 1, 2):
+             self.set_cell(i, j, "")
+             
+      self.current_player = "x"
+      self.set_status(f'{self.current_player} playing...')
 
     def next_turn(self):
         winner = self.check_winner()

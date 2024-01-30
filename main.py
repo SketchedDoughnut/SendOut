@@ -11,10 +11,10 @@ def exec(file_path):
       print(f"Error: The file '{file_path}' does not exist.")
        
 def startup():
-    try:
-        threading.Thread(target=exec, args=(str(fileName),)).start()
-    except:
-        print('exec fail')
+    #try:
+    threading.Thread(target=exec, args=(str(fileName),)).start()
+    #except:
+        #print('exec fail')
 
 #def run(server_class=HTTPServer, handler_class=BaseHTTPRequestHandler):
     #server_address = ('', 8000)
@@ -69,7 +69,7 @@ class TicTacToe:
         self.clear_terminal()
         print('=================')
         print('NEW GAME STARTING')
-        print('intervening to start the bot. Program function will be as normal.')
+        print('Intervening to start the bot. Program function will be as normal.')
         startup()
        
         print()

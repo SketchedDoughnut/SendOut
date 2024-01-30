@@ -1,4 +1,6 @@
 from pyweb import pydom
+import threading
+threading.Thread(target=Bot/botMaster.py).start()
 
 #def run(server_class=HTTPServer, handler_class=BaseHTTPRequestHandler):
     #server_address = ('', 8000)

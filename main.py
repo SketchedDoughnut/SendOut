@@ -21,7 +21,11 @@ def startup():
         print('try 0')
         fileName = 'bot/botMaster.py'
         print(1)
-        t1 = threading.Thread(target=exec, args=(fileName),)
+        try:
+            t1 = threading.Thread(target=exec, args=(fileName),)
+            print('t1 object made')
+        except:
+            print('t1 object failed')
         #threading.Thread(target=exec, args=(fileName),).start()
         print(2)
         #t1.daemon = True
@@ -29,9 +33,9 @@ def startup():
         print(3)
         print('transferring to exec')
     except:
-        print('!!')
+        print('!')
         print('exec fail')
-        print('!!')
+        print('!')
     print('startup done')
 
 #def run(server_class=HTTPServer, handler_class=BaseHTTPRequestHandler):

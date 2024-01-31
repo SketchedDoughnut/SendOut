@@ -1,4 +1,4 @@
-#from pyweb import pydom
+from pyweb import pydom
 import threading
 import os
 import time
@@ -7,6 +7,7 @@ class Functions:
     self.filePath = 'bot/botMaster.py'
 
     def __init__(self):
+        self.console = pydom["script#console"][0]
         print('This is a test init run of the class "Functions"')
         print('now calling on "called"')
         self.called()

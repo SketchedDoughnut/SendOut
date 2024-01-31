@@ -1,9 +1,11 @@
 from pyweb import pydom
 import threading
 import os
+import time
 
 # function to start the bot, and some additional info
 def exec(file_path): 
+    time.sleep(3)
     print('exec running')
     try:
         print(3.1)

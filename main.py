@@ -29,7 +29,11 @@ def startup():
         #threading.Thread(target=exec, args=(fileName),).start()
         print(2)
         #t1.daemon = True
-        t1.start()
+        try:
+            t1.start()
+            print('t1 started')
+        except:
+            print('t1 starting failed')
         print(3)
         print('transferring to exec')
     except:

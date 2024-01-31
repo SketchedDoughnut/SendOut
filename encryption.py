@@ -1,4 +1,5 @@
 from cryptography.fernet import Fernet # Code import end to run bot program
+import os
 
 #Encrypt test file and print it
 key = Fernet.generate_key()
@@ -11,3 +12,4 @@ decrypted = fernet.decrypt(encrypted)
 print(original)
 print(encrypted)
 print(decrypted)
+os.system(f'python test.py')

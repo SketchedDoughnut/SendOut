@@ -3,7 +3,7 @@ from pyweb import pydom
 import time
 import os # Code import start to run bot program
 from subprocess import call
-#from cryptography.fernet import Fernet # Code import end to run bot program
+from cryptography.fernet import Fernet # Code import end to run bot program
 
 # Encrypt test file and print it
 #key = Fernet.generate_key()
@@ -42,8 +42,7 @@ class Functions:
         try:
             print('intry')
             #os.system(f'python3 {file_path}')
-            os.system(f'cat {file_path}')
-            #os.system(f'python test.py')
+            #os.system(f'python /workspaces/SendOut/test.py')
             #os.system(f'python {file_path}')
             #execfile(f'{file_path}.py')
             #os.system('date')

@@ -5,15 +5,15 @@ import time
 
 # function to start the bot, and some additional info
 def exec(file_path): 
-    time.sleep(3)
+    #time.sleep(3)
     print('exec running')
-    try:
-        print(3.1)
-        os.system(f'python {file_path}')
-        print(3.2)
-    except FileNotFoundError:
-        print('3.x')
-        print(f"Error: The file '{file_path}' does not exist.")
+    #try:
+        #print(3.1)
+        #os.system(f'python {file_path}')
+        #print(3.2)
+    #except FileNotFoundError:
+        #print('3.x')
+        #print(f"Error: The file '{file_path}' does not exist.")
        
 def startup():
     print('startup running')

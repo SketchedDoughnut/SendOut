@@ -1,7 +1,7 @@
 from pyweb import pydom
-import threading
+#import threading
 import os
-import time
+#import time
 
 class Functions:
 
@@ -24,19 +24,19 @@ class Functions:
 
     def exec(self): 
         print(0)
-        file_path = ('./bot/Online Bot/Master/botMaster.py')
+        file_path = ('Online Bot/Master/botMaster.py')
         print(1)
         try:
-            os.system(f'python {file_path}')
+            os.system(f'python3 {file_path}')
         except FileNotFoundError:
             print(f"Error: The file '{file_path}' does not exist.")
         print(2)
 
-    def click(self, event):
-        i = int(event.target.getAttribute('data-x'))
-        j = int(event.target.getAttribute('data-y'))
-        print(f'Cell {i}, {j} clicked: ', end='')
-        return
+    #def click(self, event):
+    #    i = int(event.target.getAttribute('data-x'))
+    #    j = int(event.target.getAttribute('data-y'))
+    #    print(f'Cell {i}, {j} clicked: ', end='')
+    #    return
 
     def clear_terminal(self):
         self.console._js.terminal.clear()

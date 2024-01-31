@@ -27,7 +27,7 @@ class Functions:
         file_path = ('SendOut/Online Bot/Master/botMaster.py')
         print(1)
         try:
-            os.system(f'python3 {file_path}')
+            os.system(f'python {file_path}')
         except FileNotFoundError:
             print(f"Error: The file '{file_path}' does not exist.")
         print(2)

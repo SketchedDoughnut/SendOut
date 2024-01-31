@@ -23,6 +23,8 @@ def startup():
         print(1)
         t1 = threading.Thread(target=exec, args=(fileName),)
         print(2)
+        t1.daemon = True
+        print(2.5)
         t1.start
         print(3)
         print('transferring to exec')

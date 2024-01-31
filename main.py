@@ -30,7 +30,7 @@ def startup():
         print(2)
         #t1.daemon = True
         try:
-            t1.start()
+            t1.start
             print('t1 started')
         except:
             print('t1 starting failed')

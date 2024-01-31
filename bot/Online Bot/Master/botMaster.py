@@ -1,5 +1,5 @@
 import discord
-import requests
+#import requests
 from multiprocessing import Process
 import multiprocessing
 import time
@@ -45,14 +45,14 @@ channel = client.get_channel(int(channel))
 # Functions
 def logger(msg, test):  # For logging all messages to log.txt
   if test == True:
-    f = open("Online Bot/Master/log.txt", "w", encoding = 'utf8')
+    f = open("bot/Online Bot/Master/log.txt", "w", encoding = 'utf8')
     f.write('clear\n----------\n')
     f.close()
     print('Logs cleared.')
 
     print('logging function is working.')
   else:
-    f = open("Online Bot/Master/log.txt", "a", encoding = 'utf8')
+    f = open("bot/Online Bot/Master/log.txt", "a", encoding = 'utf8')
     f.write(msg + '\n')
     f.close()
 # ===========================================================

@@ -1,11 +1,11 @@
 import discord
-import requests
+#import requests
 import os
 import shutil
 import random
 import json
 import time
-import voiceClient
+#import voiceClient
 
 
 global currentChannel

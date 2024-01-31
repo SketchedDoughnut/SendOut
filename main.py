@@ -23,6 +23,7 @@ def startup():
         print(2)
         t1.start
         print(3)
+        print('transferring to exec')
     except:
         print('!!')
         print('exec fail')

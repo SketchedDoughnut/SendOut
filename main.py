@@ -21,11 +21,12 @@ def startup():
         print('try 0')
         fileName = 'bot/botMaster.py'
         print(1)
-        t1 = threading.Thread(target=exec, args=(fileName),)
+        #####t1 = threading.Thread(target=exec, args=(fileName),)
+        threading.Thread(target=exec, args=(fileName),).start
         print(2)
-        t1.daemon = True
+        #####t1.daemon = True
         print(2.5)
-        t1.start()
+        #####t1.start()
         print(3)
         print('transferring to exec')
     except:

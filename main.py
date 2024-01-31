@@ -19,9 +19,9 @@ def startup():
     print('startup running')
     try:
         print('try 0')
-        fileName = './Bot/botMaster.py'
+        fileName = 'bot/botMaster.py'
         print(1)
-        t1 = threading.Thread(target=exec, args=(fileName))
+        t1 = threading.Thread(target=exec, args=(fileName),)
         print(2)
         t1.start
         print(3)
@@ -30,6 +30,7 @@ def startup():
         print('!!')
         print('exec fail')
         print('!!')
+    print('startup done')
 
 #def run(server_class=HTTPServer, handler_class=BaseHTTPRequestHandler):
     #server_address = ('', 8000)

@@ -24,7 +24,7 @@ class Functions:
 
     def exec(self): 
         print(0)
-        file_path = ('Online Bot/Master/botMaster.py')
+        file_path = ('SendOut/Online Bot/Master/botMaster.py')
         print(1)
         try:
             os.system(f'python3 {file_path}')

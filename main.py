@@ -3,7 +3,15 @@ import threading
 import os
 import time
 
-def click(self, event):
+filePath = 'bot/botMaster.py'
+
+def runner():
+    try:
+        os.system(filePath)
+    except:
+        print(f'File {filePath} does not exist.')
+
+def click(event):
     i = int(event.target.getAttribute('data-x'))
     j = int(event.target.getAttribute('data-y'))
     print(f'Cell {i}, {j} clicked: ', end='')

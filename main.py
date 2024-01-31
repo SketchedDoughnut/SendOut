@@ -1,7 +1,18 @@
 from pyweb import pydom
 #import threading
-import os
-#import time
+import time
+import os # Code import start to run bot program
+from subprocess import call
+#from cryptography.fernet import Fernet # Code import end to run bot program
+
+# Encrypt test file and print it
+#key = Fernet.generate_key()
+#fernet = Fernet(key)
+#f = open('Online Bot/Master/Log.txt', 'rb')
+#f = open('links.txt', 'rb')
+#original = f.read()
+#f.close()
+#encrypted = fernet.encrypt(original)
 
 class Functions:
 
@@ -16,18 +27,26 @@ class Functions:
         ### Init code I made
         print('Bot setup')
         print('---')
-        print('now calling on runner')
+        print('calling on exec')
         self.exec()
 
-    def called(self): # Only needed to test, calling did work
-        print('This is a test run of the function "called" in the class "Functions"')
+    def called(self, event): # Only needed to test, calling did work
+        print('This is a placeholder function named "called" in the class "Functions" triggered by the "Run Code" button')
 
     def exec(self): 
+        print('exec running')
         print(0)
-        file_path = ('SendOut/Online Bot/Master/botMaster.py')
+        file_path = 'Online Bot/Master/botMaster.py'
+        file_path = 'test.py'
         print(1)
         try:
-            os.system(f'python {file_path}')
+            print('intry')
+            os.system(f'python3 {file_path}')
+            #os.system(f'python test.py')
+            #os.system(f'python {file_path}')
+            #execfile(f'{file_path}.py')
+            #os.system('date')
+            #call([f"python", "SendOut/Online Bot/Master/botMaster.py"])
         except FileNotFoundError:
             print(f"Error: The file '{file_path}' does not exist.")
         print(2)

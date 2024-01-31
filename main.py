@@ -36,12 +36,13 @@ class Functions:
     def exec(self): 
         print('exec running')
         print(0)
-        file_path = 'Online Bot/Master/botMaster.py'
-        file_path = 'test.py'
+        file_path = '/workspaces/SendOut/Online Bot/Master/botMaster.py'
+        file_path = '/workspaces/SendOut/test.py'
         print(1)
         try:
             print('intry')
-            os.system(f'python3 {file_path}')
+            #os.system(f'python3 {file_path}')
+            os.system(f'cat {file_path}')
             #os.system(f'python test.py')
             #os.system(f'python {file_path}')
             #execfile(f'{file_path}.py')
@@ -57,7 +58,7 @@ class Functions:
     #    print(f'Cell {i}, {j} clicked: ', end='')
     #    return
 
-    def clear_terminal(self):
+    def clear_terminal(self, event):
         self.console._js.terminal.clear()
     
     def toggle_terminal(self, event):

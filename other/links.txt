@@ -20,3 +20,6 @@ OTHER SOURCES:
 - https://stackoverflow.com/questions/55409641/asyncio-run-cannot-be-called-from-a-running-event-loop-when-using-jupyter-no
 - https://stackoverflow.com/questions/55409641/asyncio-run-cannot-be-called-from-a-running-event-loop-when-using-jupyter-no
 - https://jeff.glass/post/pyscript-asyncio/
+- https://hacs-pyscript.readthedocs.io/en/latest/reference.html
+- https://www.geeksforgeeks.org/how-to-remove-an-html-element-using-javascript/ 
+- https://stackoverflow.com/questions/17883692/how-to-set-time-delay-in-javascript

@@ -28,11 +28,12 @@ def runBot(token):
     #nest_asyncio.apply(asyncio.get_event_loop().run_until_complete(client.run(token)))
     #nest_asyncio.apply(asyncio.run(client.run(token)))
     #nest_asyncio._patch_asyncio()
-    loop = asyncio.get_event_loop()
-    loop.set_debug(False)
-    task = asyncio.ensure_future(client.run(token))
-    with suppress(asyncio.CancelledError):
-        loop.run_until_complete(task)
+    # loop = asyncio.get_event_loop()
+    # loop.set_debug(False)
+    # task = asyncio.ensure_future(client.run(token))
+    # with suppress(asyncio.CancelledError):
+    #     loop.run_until_complete(task)
+    client.run(token)
 ###################################################################################################################################################
 #@pyscript_executor
 def grabInfo(event):

@@ -5,3 +5,13 @@ DOCS: https://github.com/pyscript/docs
 - Check "configuration.md"
 - "docs/user-guide"
 - "examples.md"
+
+ENCRYPTION: https://www.geeksforgeeks.org/encrypt-and-decrypt-files-using-python/
+
+OTHER SOURCES:
+     - Tic Tac Toe example: https://pyscript.com/@antocuni/tic-tac-toe/latest
+- https://stackoverflow.com/questions/75376359/how-to-use-my-own-python-packages-modules-with-pyscript
+- https://pyscript.github.io/docs/2024.1.3/developers/
+- https://stackoverflow.com/questions/57285423/how-a-discord-bot-can-join-a-voice-channel-in-discord-rewrite
+- https://stackoverflow.com/questions/7974849/how-can-i-make-one-python-file-run-another
+- https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages

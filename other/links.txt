@@ -1,0 +1,7 @@
+GENERAL: https://github.com/pyscript
+- https://github.com/pyscript/pyscript
+
+DOCS: https://github.com/pyscript/docs
+- Check "configuration.md"
+- "docs/user-guide"
+- "examples.md"

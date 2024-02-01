@@ -22,7 +22,8 @@ async def on_message(message):
 def runBot(token):
     #nest_asyncio.apply(client.run(token))
     #asyncio.get_event_loop().run_until_complete(client.run(token))
-    asyncio.create_task(client.run(token))
+    #nest_asyncio.apply(asyncio.get_event_loop().run_until_complete(client.run(token)))
+    nest_asyncio.apply(client.run(token))
 ###################################################################################################################################################
 #@pyscript_executor
 def grabInfo(event):

@@ -1,4 +1,5 @@
 import discord
+from pyscript import display
 
 # Bot essentials
 intents = discord.Intents.all()
@@ -14,3 +15,11 @@ async def on_message(message):
 
 client.run(str(input()))
 ###################################################################################################################################################
+class test:
+    def __init__(self, event):
+        print('hello!')
+        
+    def test(self, event):
+        display('hello again!')
+
+TEST = test()

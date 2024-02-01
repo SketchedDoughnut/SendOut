@@ -2,6 +2,7 @@ import discord
 import pyscript
 import asyncio
 import threading
+import time
 
 # global variables
 global key
@@ -18,6 +19,11 @@ async def on_ready():
 @client.event
 async def on_message(message):
     print(message)
+
+def runBot():
+    global token
+    token = ' '
+    client.run(token)
 ###################################################################################################################################################
 #@pyscript_executor
 def grabInfo(event):
@@ -33,7 +39,6 @@ def grabInfo(event):
 
     # loading = pyscript.document.querySelector("#loading")
     # loading.innerText = " "
-
+    runBot()
     # run the bot below
     #await asyncio.gather(client.run(token))
-    #client.run(token)

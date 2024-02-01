@@ -1,18 +1,10 @@
 from pyweb import pydom
 #import threading
 import time
-import os # Code import start to run bot program
-from subprocess import call
-from cryptography.fernet import Fernet # Code import end to run bot program
+import os # Code import start to run bot program #####################
+#from subprocess import call
+from cryptography.fernet import Fernet 
 
-# Encrypt test file and print it
-#key = Fernet.generate_key()
-#fernet = Fernet(key)
-#f = open('Online Bot/Master/Log.txt', 'rb')
-#f = open('links.txt', 'rb')
-#original = f.read()
-#f.close()
-#encrypted = fernet.encrypt(original)
 
 class Functions:
 
@@ -27,26 +19,22 @@ class Functions:
         ### Init code I made
         print('Bot setup')
         print('---')
-        print('calling on exec')
-        self.exec()
+        print('calling on exect')
+        self.exect()
 
     def called(self, event): # Only needed to test, calling did work
         print('This is a placeholder function named "called" in the class "Functions" triggered by the "Run Code" button')
 
-    def exec(self): 
-        print('exec running')
+    def exect(self): 
+        print('exect running')
         print(0)
         file_path = '/workspaces/SendOut/Online Bot/Master/botMaster.py'
         file_path = '/workspaces/SendOut/test.py'
         print(1)
         try:
             print('intry')
-            #os.system(f'python3 {file_path}')
-            #os.system(f'python /workspaces/SendOut/test.py')
             #os.system(f'python {file_path}')
-            #execfile(f'{file_path}.py')
-            #os.system('date')
-            #call([f"python", "SendOut/Online Bot/Master/botMaster.py"])
+            os.system(f'python testThing.py')
         except FileNotFoundError:
             print(f"Error: The file '{file_path}' does not exist.")
         print(2)
@@ -68,3 +56,15 @@ class Functions:
             self.console.parent._js.setAttribute("hidden", "hidden")
 
 FUNCTIONS = Functions()
+
+# Encrypt test file and print it
+#file_path = "./workspaces/SendOut/test.py"
+#key = Fernet.generate_key()
+#fernet = Fernet(key)
+#f = open(f'{file_path}', 'rb')
+#original = f.read()
+#original = 'uwu!'
+##f.close()
+#encrypted = fernet.encrypt(original)
+#print(original)
+#print(encrypted)

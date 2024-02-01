@@ -1,0 +1,8 @@
+{
+    "packages": ["discord.py", "cryptography"]
+    
+
+    ,"files": {
+        "./test.py": "testThing"
+        }
+}

@@ -29,14 +29,11 @@ def grabInfo(event):
     token = pyscript.document.querySelector("#token")
     token = token.value
     output_div = pyscript.document.querySelector("#output")
-    output_div.innerText = (f'{key}, {token}')
+    output_div.innerText = (f'key: {key} \n token: {token}')
+
+    # loading = pyscript.document.querySelector("#loading")
+    # loading.innerText = " "
 
     # run the bot below
     #await asyncio.gather(client.run(token))
-    client.run(token)
-
-def running(event):
-    t1 = threading.Thread(target=grabInfo,)
-    t1.start()
-
-test = 'MTE1MDg2NzE3OTk1NzQwNzkwNQ.GxeGJv.UMrOq2DyGHVDRoU9GI0CGNQYv1HudTJXp5OlnI'
+    #client.run(token)

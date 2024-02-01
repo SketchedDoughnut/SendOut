@@ -1,5 +1,10 @@
 import discord
-from pyscript import display
+from pyscript import document
+import asyncio
+
+# global variables
+global key
+global token
 
 # Bot essentials
 intents = discord.Intents.all()
@@ -12,14 +17,17 @@ async def on_ready():
 @client.event
 async def on_message(message):
     print(message)
-
-client.run(str(input()))
 ###################################################################################################################################################
-class test:
-    def __init__(self, event):
-        print('hello!')
-        
-    def test(self, event):
-        display('hello again!')
 
-TEST = test()
+async def grabInfo(event):
+    global token
+    global key
+    key = document.querySelector("#key")
+    key = key.value
+    token = document.querySelector("#token")
+    token = token.value
+    output_div = document.querySelector("#output")
+    output_div.innerText = str(token) + str(key)
+
+    # run the bot below
+    await asyncio.gather(client.run(token))

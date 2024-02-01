@@ -49,8 +49,16 @@
             <input type="radio" id="javascript" name="fav_language" value="JavaScript">
             <label for="javascript">JavaScript</label>
         </form>
+        
+        <p>Enter info below</p>
+        <input type="text" id="token" placeholder="token" />
+        <input type="text" id="key" placeholder="key" />
+        <button py-click="grabInfo">Enter</button>
+        <div id="output"></div>
+        <script type="py" src="./main.py" config="./pyscript.json"></script>
 
-        <a href="https://www.w3schools.com/html/html_forms.asp">Source 1</a>
-        <a href="https://www.w3schools.com/html/html_links.asp">Source 2</a>
+        <!-- links -->
+        <a href="https://www.w3schools.com/html/html_forms.asp" target="blank">Source 1</a>
+        <a href="https://www.w3schools.com/html/html_links.asp" target="blank">Source 2</a>
     </body>
 </html>

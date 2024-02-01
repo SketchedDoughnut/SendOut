@@ -1,3 +1,3 @@
 {
-    "packages": ["discord.py", "cryptography"]
+    "packages": ["discord.py", "cryptography", "nest-asyncio"]
 }

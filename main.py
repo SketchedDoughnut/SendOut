@@ -22,7 +22,7 @@ async def on_ready():
 async def on_message(message):
     print(message)
 
-def runBot(token):
+def runBot(token):                                                                      ####### Attempted ideas below, tagged out
     #nest_asyncio.apply(client.run(token))
     #asyncio.get_event_loop().run_until_complete(client.run(token))
     #nest_asyncio.apply(asyncio.get_event_loop().run_until_complete(client.run(token)))
@@ -33,7 +33,7 @@ def runBot(token):
     # task = asyncio.ensure_future(client.run(token))
     # with suppress(asyncio.CancelledError):
     #     loop.run_until_complete(task)
-    client.run(token)
+    client.run(token) 
 ###################################################################################################################################################
 #@pyscript_executor
 def grabInfo(event):

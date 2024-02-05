@@ -1,8 +1,8 @@
 """
 ---> HTML tags to grab and change index (ex: #test):
-- #output: check for "outputTemp" text on the page; this can be changed with updates from the python file
+- #output: check for "outputTemp" text on the page; this can be changed with updates from the python file (CURRENTLY INACTIVE)
 - #loadingFace: A cute lil face that just sits there
-- #loading: Text to display a loading state
+- #output: (originally #loading) Text to display a loading state, used to update state
 - #token: The bot token that is inputted into the website to run the bot
 - #key: the decryption key (undecided whether to use or not)
 """

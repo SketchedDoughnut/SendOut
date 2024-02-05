@@ -38,27 +38,34 @@
     <body>
         <!-- some display text that can be changed in python -->
         <h1>In development ; Title here </h1>
-        <div id=output><h3>Loading...</h3></div>
+        <div id=loading><h3>Loading...</h3></div>
         
         <!-- intakes info and passes on to python -->
-        <p>Enter info below</p>
+        <div id=inputPrompt><p>Enter info below</p></div>
         <input type="text" id="token" placeholder="token" />
         <input type="text" id="key" placeholder="key" />
         <button py-click="sysRun">Enter</button>
 
-        <!-- for now, outputs updates from the python file -->
-        <!-- <div id="output">
-            <p>outputTemp<p>
-        </div> -->
+        <!-- display input info -->
+        <div id="displayInfo">
+            <p></p>
+        </div>
+
+        <!-- a lil face -->
         <div id="loadingFace">
             <h1>/^w^/</h1>
+        </div>
+
+        <!-- for now, outputs updates from the python file -->
+        <div id="output">
+            <p>outputTemp<p>
         </div>
 
         <!-- running the .py starts here -->
         <script type="py" src="./main.py" config="./pyscript.json"></script>
 
         <!-- links -->
-        <a href="https://www.w3schools.com/html/html_forms.asp" target="blank">Source 1</a>
-        <a href="https://www.w3schools.com/html/html_links.asp" target="blank">Source 2</a>
+        <!-- <a href="https://www.w3schools.com/html/html_forms.asp" target="blank">Source 1</a>
+        <a href="https://www.w3schools.com/html/html_links.asp" target="blank">Source 2</a> -->
     </body>
 </html>

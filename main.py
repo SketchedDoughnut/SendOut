@@ -1,3 +1,12 @@
+"""
+---> HTML tags to grab and change index (ex: #test):
+- #output: check for "outputTemp" text on the page; this can be changed with updates from the python file
+- #loadingFace: A cute lil face that just sits there
+- #loading: Text to display a loading state
+- #token: The bot token that is inputted into the website to run the bot
+- #key: the decryption key (undecided whether to use or not)
+"""
+
 import discord
 import pyscript
 
@@ -29,7 +38,7 @@ async def on_message(message):
 
 ###################################################################################################################################################
 
-def grabInfo(event):
+def grabInfo():
     global token
     global key
     global output_div
@@ -37,9 +46,9 @@ def grabInfo(event):
     key = key.value
     token = pyscript.document.querySelector("#token")
     token = token.value
-    output_div = pyscript.document.querySelector("#output")
-    output_div.innerText = (f'key: {key} \n token: {token}')
+    editOutputDiv((f'key: {key} \n token: {token}'))
     asyncio.create_task(runBot(token))
+
 
 async def runBot(token): 
     try:
@@ -48,24 +57,34 @@ async def runBot(token):
         loop = None
     if loop and loop.is_running():
         print('Async event loop already running. Adding coroutine to the event loop.')
-        #tsk = loop.create_task(client.start(token)) #########################################
-        tsk = loop.create_task(client.login(token)) #######################
+        tsk = loop.create_task(client.start(token)) 
+        
         # ^-- https://docs.python.org/3/library/asyncio-task.html#task-object
         # Optionally, a callback function can be executed when the coroutine completes
         #tsk.add_done_callback(
         #    print(f'Task done with result={t.result()}  << return val of main()'))
+
     else:
         print('Starting new event loop')
-        #result = asyncio.run((client.start(token))) ###############################
-        result = asyncio.run(client.login(token)) #####################
+        result = asyncio.run((client.start(token))) 
 
 
-# SSL testing
-hostname = 'https://sketcheddoughnut.github.io/SendOut/'
-context = ssl.create_default_context()
+def SSLSetup():
+    hostname = 'https://sketcheddoughnut.github.io/SendOut/'
+    context = ssl.create_default_context()
 
-with socket.create_connection((hostname, 443)) as sock:
-    with context.wrap_socket(sock, server_hostname=hostname) as ssock:
-        output_div = pyscript.document.querySelector("#output")
-        output_div.innerText = ssock.version()
-# SSL testing end
+    with socket.create_connection((hostname, 443)) as sock:
+        with context.wrap_socket(sock, server_hostname=hostname) as ssock:
+            editOutputDiv(ssock.version())
+
+            
+def editOutputDiv(input):
+    output_div = pyscript.document.querySelector("#output")
+    output_div.innerText = input
+
+
+def sysRun(event):
+    editOutputDiv('setting up SSL')
+    SSLSetup()
+    editOutputDiv('SSL setup')
+    grabInfo()

@@ -31,7 +31,7 @@ client = discord.Client(command_prefix="!", intents=intents)
 
 @client.event
 async def on_ready():
-    editDiv('output','bot is on ready')
+    eDiv('output','bot is on ready')
 
 @client.event
 async def on_message(message):
@@ -42,12 +42,14 @@ async def on_message(message):
 def grabInfo():
     global token
     global key
-    global output_div
     key = pyscript.document.querySelector("#key")
     key = key.value
     token = pyscript.document.querySelector("#token")
     token = token.value
-    editDiv('displayInfo', f'key: {key} \n token: {token}')
+    eDiv('displayInfo', f'key: {key} \n token: {token}')
+    eDiv('output', 'grabInfo/status: starting runBot function with asyncio', add=True)
+    eDiv('output', f'--> token: {token}', add=True)
+    asyncio.create_task(runBot(token))
 
 
 async def runBot(token): 
@@ -56,7 +58,8 @@ async def runBot(token):
     except RuntimeError:  # 'RuntimeError: There is no current event loop...'
         loop = None
     if loop and loop.is_running():
-        print('Async event loop already running. Adding coroutine to the event loop.')
+        #print('Async event loop already running. Adding coroutine to the event loop.')
+        eDiv('output', 'runBot/status: async already running, adding crouton to event loop', add=True)
         tsk = loop.create_task(client.start(token)) 
         
         # ^-- https://docs.python.org/3/library/asyncio-task.html#task-object
@@ -65,7 +68,8 @@ async def runBot(token):
         #    print(f'Task done with result={t.result()}  << return val of main()'))
 
     else:
-        print('Starting new event loop')
+        #print('Starting new event loop')
+        eDiv('output', 'runBot/status: starting new event loop', add=True)
         result = asyncio.run((client.start(token))) 
 
 
@@ -75,10 +79,10 @@ def SSLsetup():
 
     with socket.create_connection((hostname, 443)) as sock:
         with context.wrap_socket(sock, server_hostname=hostname) as ssock:
-            editDiv('output', ssock.version())
+            eDiv('output', ssock.version(), add=True)
 
             
-def editDiv(tag, input, add=False):
+def eDiv(tag, input, add=False):
     div = pyscript.document.querySelector(f"#{tag}")
     if add == True:
         div.innerText += f'\n {input}'
@@ -87,10 +91,8 @@ def editDiv(tag, input, add=False):
 
 
 def sysRun(event):
-    editDiv('output', '/Status: grabbing info')
-    editDiv('inputPrompt', " ")
+    eDiv('output', 'sysRun/status: grabbing info', add=True)
+    eDiv('inputPrompt', " ")
     grabInfo()
-    #editDiv('output', 'setting up SSL')
-    #SSLsetup()
-    editDiv('output', '/Status: starting bot', add=True)
-    asyncio.create_task(runBot(token))
+    eDiv('output', '/status: setting up SSL', add=True)
+    SSLsetup()

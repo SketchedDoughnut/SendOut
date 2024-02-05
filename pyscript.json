@@ -1,3 +1,3 @@
 {
-    "packages": ["discord.py", "cryptography", "nest-asyncio", "asyncio", "requests"]
+    "packages": ["discord.py", "cryptography", "nest-asyncio", "asyncio", "requests", "aiohttp"]
 }

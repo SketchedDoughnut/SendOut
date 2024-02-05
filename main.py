@@ -7,6 +7,20 @@ import requests
 #asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 import nest_asyncio
 
+#############
+import socket
+import ssl
+
+hostname = 'https://sketcheddoughnut.github.io/SendOut/'
+context = ssl.create_default_context()
+
+with socket.create_connection((hostname, 443)) as sock:
+    with context.wrap_socket(sock, server_hostname=hostname) as ssock:
+        output_div = pyscript.document.querySelector("#output")
+        output_div.innerText = ssock.version()
+        #print(ssock.version())
+###############
+        
 # global variables
 global key
 global token
@@ -40,14 +54,17 @@ async def runBot(token):                                                        
         loop = None
     if loop and loop.is_running():
         print('Async event loop already running. Adding coroutine to the event loop.')
-        tsk = loop.create_task(client.start(token))
+        #tsk = loop.create_task(client.start(token)) #########################################
+        tsk = loop.create_task(client.login(token)) #######################
         # ^-- https://docs.python.org/3/library/asyncio-task.html#task-object
         # Optionally, a callback function can be executed when the coroutine completes
         #tsk.add_done_callback(
         #    print(f'Task done with result={t.result()}  << return val of main()'))
     else:
         print('Starting new event loop')
-        result = asyncio.run((client.start(token)))
+        #result = asyncio.run((client.start(token))) ###############################
+        result = asyncio.run(client.login(token)) #####################
+
 ###################################################################################################################################################
 #@pyscript_executor
 def grabInfo(event):

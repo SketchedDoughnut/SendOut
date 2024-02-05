@@ -19,6 +19,7 @@
         <style>
             #loading { outline: none; border: none; background: transparent }
         </style>
+
         <script type="module">
             const loading = document.getElementById('loading');
             addEventListener('py:ready', () => loading.close());
@@ -28,47 +29,31 @@
         <title>TBD</title>
         <link rel="icon" type="image/png" href="./assets/favicon.png"/>
     </head>
+
+
+
+
+
     <body>
-        <!-- <dialog id="loading">
-            <h1>Loading...</h1>
-        </dialog> -->
         <h1>In development ; Title here </h1>
         <div id="channel">Channel name goes here</div>
         <div id=loading><h3>Loading...</h3></div>
-            <!-- <h2>Loading...</h2> -->
-        <!-- <form>
-            <label for="fname">First name:</label><br>
-            <input type="text" id="fname" name="fname"><br>
-            <label for="lname">Last name:</label><br>
-            <input type="text" id="lname" name="lname">
-        </form>
-
-        <p>Choose your favorite Web language:</p>
-        <form>
-            <input type="radio" id="html" name="fav_language" value="HTML">
-            <label for="html">HTML</label><br>
-            <input type="radio" id="css" name="fav_language" value="CSS">
-            <label for="css">CSS</label><br>
-            <input type="radio" id="javascript" name="fav_language" value="JavaScript">
-            <label for="javascript">JavaScript</label>
-        </form> -->
         
         <p>Enter info below</p>
         <input type="text" id="token" placeholder="token" />
         <input type="text" id="key" placeholder="key" />
         <button py-click="grabInfo">Enter</button>
-        <div id="output"></div>
+        <div id="output">
+            <p>outputTemp<p>
+        </div>
+        <dialog id="loadingFace">
+            <h1>/^w^/</h1>
+        </dialog>
         <script type="py" src="./main.py" config="./pyscript.json"></script>
-        <!-- <script>
-            delayInMilliseconds = 5000;
-            setTimeout(function() {
-                let loadingDiv = document.getElementById('loading');
-                loadingDiv.remove();
-            }, delayInMilliseconds);
-        </script> -->
+
 
         <!-- links -->
-        <!-- <a href="https://www.w3schools.com/html/html_forms.asp" target="blank">Source 1</a>
-        <a href="https://www.w3schools.com/html/html_links.asp" target="blank">Source 2</a> -->
+        <a href="https://www.w3schools.com/html/html_forms.asp" target="blank">Source 1</a>
+        <a href="https://www.w3schools.com/html/html_links.asp" target="blank">Source 2</a>
     </body>
 </html>

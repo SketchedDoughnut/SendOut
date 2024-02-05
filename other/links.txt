@@ -10,6 +10,7 @@ PACKAGE LINKS:
 - https://pypi.org/project/nest-asyncio/
      - https://github.com/erdewit/nest_asyncio/blob/master/nest_asyncio.py
 - https://pypi.org/project/asyncio/
+- https://docs.python.org/3/library/ssl.html
 
 DOCS: https://github.com/pyscript/docs
 - Check "configuration.md"
@@ -31,3 +32,4 @@ OTHER SOURCES:
 - https://www.geeksforgeeks.org/how-to-remove-an-html-element-using-javascript/ 
 - https://stackoverflow.com/questions/17883692/how-to-set-time-delay-in-javascript
 - https://github.com/erdewit/nest_asyncio/issues/62
+

@@ -1,0 +1,32 @@
+--> Some extra html stuff: 
+    <!-- <form>
+                <label for="fname">First name:</label><br>
+                <input type="text" id="fname" name="fname"><br>
+                <label for="lname">Last name:</label><br>
+                <input type="text" id="lname" name="lname">
+    </form>
+
+    <p>Choose your favorite Web language:</p>
+    <form>
+                <input type="radio" id="html" name="fav_language" value="HTML">
+                <label for="html">HTML</label><br>
+                <input type="radio" id="css" name="fav_language" value="CSS">
+                <label for="css">CSS</label><br>
+                <input type="radio" id="javascript" name="fav_language" value="JavaScript">
+                <label for="javascript">JavaScript</label>
+    </form> -->
+
+--> Attempts to get running the bot to work with asyncio:
+    #nest_asyncio.apply(client.run(token))
+        #asyncio.get_event_loop().run_until_complete(client.run(token))
+        #nest_asyncio.apply(asyncio.get_event_loop().run_until_complete(client.run(token)))
+        #nest_asyncio.apply(asyncio.run(client.run(token)))
+        #nest_asyncio._patch_asyncio()
+        # loop = asyncio.get_event_loop()
+        # loop.set_debug(False)
+        # task = asyncio.ensure_future(client.run(token))
+        # with suppress(asyncio.CancelledError):
+        #     loop.run_until_complete(task)
+
+--> some extra jazz for .json:
+    # ,"ports": ["53:53", "53:53/udp"]

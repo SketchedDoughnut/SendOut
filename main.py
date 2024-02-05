@@ -4,23 +4,13 @@ import pyscript
 from contextlib import contextmanager, suppress
 import asyncio
 import requests
-#asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 import nest_asyncio
 
-#############
+############# an attempt to get SSL to work
 import socket
 import ssl
-
-hostname = 'https://sketcheddoughnut.github.io/SendOut/'
-context = ssl.create_default_context()
-
-with socket.create_connection((hostname, 443)) as sock:
-    with context.wrap_socket(sock, server_hostname=hostname) as ssock:
-        output_div = pyscript.document.querySelector("#output")
-        output_div.innerText = ssock.version()
-        #print(ssock.version())
-###############
-        
+############# an attempt to get SSL to work
+    
 # global variables
 global key
 global token
@@ -37,17 +27,21 @@ async def on_ready():
 async def on_message(message):
     print(message)
 
-async def runBot(token):                                                                      ####### Attempted ideas below, tagged out
-    #nest_asyncio.apply(client.run(token))
-    #asyncio.get_event_loop().run_until_complete(client.run(token))
-    #nest_asyncio.apply(asyncio.get_event_loop().run_until_complete(client.run(token)))
-    #nest_asyncio.apply(asyncio.run(client.run(token)))
-    #nest_asyncio._patch_asyncio()
-    # loop = asyncio.get_event_loop()
-    # loop.set_debug(False)
-    # task = asyncio.ensure_future(client.run(token))
-    # with suppress(asyncio.CancelledError):
-    #     loop.run_until_complete(task)
+###################################################################################################################################################
+
+def grabInfo(event):
+    global token
+    global key
+    global output_div
+    key = pyscript.document.querySelector("#key")
+    key = key.value
+    token = pyscript.document.querySelector("#token")
+    token = token.value
+    output_div = pyscript.document.querySelector("#output")
+    output_div.innerText = (f'key: {key} \n token: {token}')
+    asyncio.create_task(runBot(token))
+
+async def runBot(token): 
     try:
         loop = asyncio.get_running_loop()
     except RuntimeError:  # 'RuntimeError: There is no current event loop...'
@@ -65,25 +59,13 @@ async def runBot(token):                                                        
         #result = asyncio.run((client.start(token))) ###############################
         result = asyncio.run(client.login(token)) #####################
 
-###################################################################################################################################################
-#@pyscript_executor
-def grabInfo(event):
-    global token
-    global key
-    global output_div
-    key = pyscript.document.querySelector("#key")
-    key = key.value
-    token = pyscript.document.querySelector("#token")
-    token = token.value
-    output_div = pyscript.document.querySelector("#output")
-    output_div.innerText = (f'key: {key} \n token: {token}')
-    #asyncio.get_event_loop().run_until_complete(runBot(token))
-    #nest_asyncio.apply()(r)
-    asyncio.create_task(runBot(token))
-    # loading = pyscript.document.querySelector("#loading")
-    # loading.innerText = " "
 
+# SSL testing
+hostname = 'https://sketcheddoughnut.github.io/SendOut/'
+context = ssl.create_default_context()
 
-
-# for JSON
-    # ,"ports": ["53:53", "53:53/udp"]
+with socket.create_connection((hostname, 443)) as sock:
+    with context.wrap_socket(sock, server_hostname=hostname) as ssock:
+        output_div = pyscript.document.querySelector("#output")
+        output_div.innerText = ssock.version()
+# SSL testing end

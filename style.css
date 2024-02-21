@@ -1,0 +1,222 @@
+/* header stuff*/
+header {
+  z-index: 1;
+  position: fixed;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  width: 100%;
+  height: clamp(60px, 10vw, 100px); /* keep between 60px and 100px */
+  background-color: rgba(251, 119, 43, 0.8);
+  backdrop-filter: blur(10px);
+  /* box-shadow: 0px, 20px, 20px, 0px, #ff0000; */
+  box-shadow: 0 -20px 30px 15px rgba(0,0,0,0.5);
+  /* background-image:linear-gradient(rgba(255,255,255,1), rgba(255,255,255,0)); */
+  display: flex;
+  align-content: center;
+}
+
+
+/* formatting title stuff */
+#title {
+  /* centering general box ig?? */
+  z-index: 2;
+  position: relative;
+  margin: 0px;
+  margin-left: clamp(12px, 2vw, 20px); /* clamp range scaled for percentage of viewport width */
+  height: fit-content;
+  width: fit-content;
+
+  /* text stuff */
+  align-self: center;
+  font-size: clamp(24px, 4vw, 40px); /* clamp range scaled for percentage of viewport width */
+  /* color: orangered; */
+  color: black;
+  font-weight: 500;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  
+}
+
+
+/* logo */
+#logo {
+  z-index: 2;
+  position: relative;
+  scale: 80%;
+}
+
+
+/* to put stuff in the top right, if needed? */
+.top-right {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+}
+
+
+/* to evenly space and put the links at the top */
+.links {
+  position:relative;
+  font-size: 1.25vw;
+  height: 100%;
+  width: 70%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bolder;
+}
+
+
+/* body stuff */
+body {
+  position: relative;
+  margin: 0px;
+  margin-top: clamp(60px, 10vw, 100px);
+  left: 0px;
+  width: 100%;
+  height: 200%;
+  background-color: #f3f4ec; /* not final. for seeing where different elements start and end. */
+}
+
+
+/* header 1*/
+h1{
+  font-size: 50px;
+  letter-spacing: 3px;
+  font-weight: 100;
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+  margin-bottom: 10px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+
+/* text content */
+.text-content {
+  margin-left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  min-width: 350px;
+  margin-top: 16px;
+  font-family: sans-serif;
+}
+
+
+/* body image */
+.body-img{
+  margin-left: 50%;
+  transform: translateX(-50%);
+  height: 40vmin;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  
+}
+
+
+/* image container? */
+.img-holder{
+  position: relative;
+  width: 50%;
+  left: 50%;
+  min-width: 350px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: leeft;
+  flex-wrap: wrap;
+  /* gap: var(--gap-amount);
+  row-gap: var(--gap-amount); */
+}
+
+
+/* bad name. needs to be changed */
+.blur-image-wrapper{
+  border-radius: 10px;
+  margin: var(--gap-amount);
+  position: relative;
+  width: calc(100% / var(--row-length) - (var(--gap-amount) * (var(--row-length)))); 
+  /*100% / (#of images per row), - (gap * #of images per row -1) */
+  height: auto;
+  text-align: center;
+  text-justify: center;
+  
+}
+
+
+/* text overlay */
+.text-overlay{
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9vw;
+  position: absolute;
+  padding: 15px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  transition: opacity 0.3s;
+  opacity: 0;
+  color: white;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  
+}
+
+/* wtf is this */
+.blur-image-wrapper:hover .text-overlay{
+  opacity: 1;
+}
+
+
+/* image */
+.img{ 
+  transition: filter 0.3s;
+  border-radius: 10px;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+/* wtf x2 */
+.blur-image-wrapper:hover .img{
+  filter: blur(4px);
+  filter: brightness(60%)
+}
+
+
+/* editing the splash image */
+.splash-screen {
+
+  /* moving image */
+  margin-top: 5%;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 35%;
+  height: 35%;
+  object-fit: fill; /* https://www.w3schools.com/css/css3_object-fit.asp */
+}
+
+
+/* editing the footer at the bottom of the page */
+.footer {
+  width: 100%;
+  background-color: rgba(114, 114, 114, 0.563);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+
+/* icon wrapper */
+.icon-wrapper {
+  display: flex;
+  gap: 30px;
+}

@@ -1,40 +1,120 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="en">
 
-<html>
-    <head>
-        <!-- Recommended meta tags -->
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
-        <!-- PyScript CSS -->
-        <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
-        <!-- CSS for examples -->
-        <link rel="stylesheet" href="./assets/css/examples.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./assets/main/ravioli.png"/> <!-- Website icon at top of tab -->
+    <link rel="stylesheet" href="./style.css"/> <!-- linking CSS -->
+    <script src="script.js"></script>
+    <title>Beavertronics</title>
+</head>
 
-        <!-- This script tag bootstraps PyScript -->
-        <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
 
-        <!-- Custom CSS -->
-        <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-        <link rel="stylesheet" href="./assets/css/tictactoe.css" />
+<header>
+    <!-- Beavertronics logo in the top left of page -->
+    <img id=logo src="./assets/main/ravioli.png" alt="Italian Trulli"> 
+    <div id=title> 
+        BEAVERTRONICS TEAM 5970
+    </div>
 
-        <!-- for splashscreen -->
-        <style>
-            #loading { outline: none; border: none; background: transparent }
-        </style>
-        <script type="module">
-            const loading = document.getElementById('loading');
-            addEventListener('py:ready', () => loading.close());
-            loading.showModal();
-        </script>
+    <!-- links -->
+    <!-- NOTE: Set "target" to blank if you want it to open link in a new tab -->
+    <!-- https://www.google.com/url?sa=i&url=https%3A%2F%2Fthesageapron.com%2Fthe-best-homemade-cheese-ravioli%2F&psig=AOvVaw0uUOWF8wFhFgHu6dD6tAKI&ust=1708327044029000&source=images&cd=vfe&opi=89978449&ved=0CBMQjRxqFwoTCNCIzaastIQDFQAAAAAdAAAAABAE -->
+    <div class="links"> 
+        
+        <a style="text-decoration: none; color: black" href="./index.html">
+            <p>home</p>  <!-- text goes here -->
+        </a>
 
-        <title>temp</title>
-        <link rel="icon" type="image/png" href="./assets/favicon.png"/>
-    </head>
-    <body>
-        <dialog id="loading">
-            <h1>/^w^/</h1>
-        </dialog>
-        <h1>In development ;</h1>
-    </body>
+        <a style="text-decoration: none; color: black" href="./pages/resources.html">
+            <p>resources</p>  <!-- text goes here -->
+        </a>
+
+        <a style="text-decoration: none; color: black" href="./pages/spaghetti.html">
+            <p>spaghetti</p>  <!-- text goes here -->
+        </a>
+
+        <a style="text-decoration: none; color: black" href="./pages/eggplant.html">
+            <p>eggplant</p>  <!-- text goes here -->
+        </a>
+
+        <a style="text-decoration: none; color: black" href="./pages/taco.html">
+            <p>taco</p>  <!-- text goes here -->
+        </a>
+        
+        <a style="text-decoration: none; color: black" href="./pages/alastor.html">
+            <p>alastor</p>  <!-- text goes here -->
+        </a>
+    </div>
+</header>
+
+
+<body>
+    <img class="splash-screen" src="./assets/main/Fettuccine-Alfredo.jpg" alt="Italian Trulli">     <h1>
+        ABOUT OUR TEAM
+    </h1>
+    <p class="text-content">
+        We compete in the FIRST Robotics Competition to learn lessons in perseverance, teamwork, and a plethora of technical skills. Our team spends 6 short weeks every year working almost around the clock to design and build a competitive robot. Beyond this, we participate in a variety of community outreach events to engage those around us in STEM fields because we know the importance of getting young people excited and interested.
+    </p>
+    <div id="img-holder" class="img-holder" style="--row-length: 3; --gap-amount: 2%">
+        <div class="blur-image-wrapper">
+            <div class="text-overlay"> 
+                <b>SAFTEY</b>       
+                <br><br>
+                We dedicate ourselves to preserving the safety of our team members. Power tools are the most fun when used safely! The Safety Captain oversees safety tests and the enforcement of safety regulations.</div>
+            <img src="https://static.wixstatic.com/media/cbe77e_13e422cfa1ec47e092ded8cf8fd5691f~mv2.jpg/v1/fill/w_284,h_420,al_c,q_80,usm_1.20_1.00_0.01,enc_auto/cbe77e_13e422cfa1ec47e092ded8cf8fd5691f~mv2.jpg" class="img">
+        </div>
+        <div class="blur-image-wrapper">
+            <div class="text-overlay">
+                <b>BUILD</b>
+                <br><br>
+                Team members machine parts using power tools such as the band saw, drill press, CNC mill, and 3D printer. We also assemble parts using a variety of fasteners.</div>
+            <img src="https://static.wixstatic.com/media/cbe77e_bad328631b8a45efa236b1265a13b569~mv2.jpg/v1/fill/w_284,h_420,al_c,q_80,usm_1.20_1.00_0.01,enc_auto/cbe77e_bad328631b8a45efa236b1265a13b569~mv2.jpg" class="img">
+        </div>
+        <div class="blur-image-wrapper">
+            <div class="text-overlay">
+                <b>CONTROL SYSTEMS</b> 
+                <br><br>
+                Students and mentors partner to teach incoming members to wire electrical boards and program in Python. The electrical and programming subteams work in tandem with the goal of a smoothly functioning control system.</div>
+            <img src="https://static.wixstatic.com/media/cbe77e_8110a7825dfc4a1f82d60bdcb8a40177~mv2.jpg/v1/fill/w_284,h_420,al_c,q_80,usm_1.20_1.00_0.01,enc_auto/cbe77e_8110a7825dfc4a1f82d60bdcb8a40177~mv2.jpg" class="img">
+        </div>
+        <div class="blur-image-wrapper">
+            <div class="text-overlay">
+                <b>DESIGN</b>
+                <br><br>
+                Our team strategically designs each robot with feasability, simplicity, and awesomeness all in mind; the CAD team makes these dreams into a reality.</div>
+            <img src="https://static.wixstatic.com/media/cbe77e_85f3406992e241ef9988ef2bc1cbbeb2~mv2.jpg/v1/fill/w_284,h_420,al_c,q_80,usm_1.20_1.00_0.01,enc_auto/cbe77e_85f3406992e241ef9988ef2bc1cbbeb2~mv2.jpg" class="img">
+        </div>
+        <div class="blur-image-wrapper">
+            <div class="text-overlay">
+                <b>MARKETING</b>
+                <br><br>
+                Students learn first-hand how to create consistent branding, talk to sponsors, write grants, and empower a team. Our marketing team spreads word of our program throughout the community of FIRST and beyond.</div>
+            <img src="https://static.wixstatic.com/media/cbe77e_8e783eac4ef54a13b61999a50ed63382~mv2.jpg/v1/fill/w_284,h_420,al_c,q_80,usm_1.20_1.00_0.01,enc_auto/cbe77e_8e783eac4ef54a13b61999a50ed63382~mv2.jpg" class="img">
+        </div>
+        <div class="blur-image-wrapper">
+            <div class="text-overlay">
+                <b>COMMUNITY DEVELOPMENT</b>
+                <br><br>
+                Integral to our team mission is the idea of exposing our community to STEM and FIRST. We believe that all deserve the opportunity to participate in the scientific development of our world; the earlier we can make a difference, the better!</div>
+            <img src="https://static.wixstatic.com/media/cbe77e_31ae767b94c24dfdb2c4337c17eecf90~mv2_d_3600_2400_s_4_2.jpg/v1/fill/w_284,h_419,al_c,q_80,usm_1.20_1.00_0.01,enc_auto/cbe77e_31ae767b94c24dfdb2c4337c17eecf90~mv2_d_3600_2400_s_4_2.jpg" class="img">
+        </div>
+    </div>
+    <img src="./assets/main/riggatoni.webp" class="body-img">
+</body>
+
+
+<footer class="footer">
+    <div class="icon-wrapper">
+        <!-- <a href="https://www.facebook.com/Beavertronics-Team-5970-453426894846186/?ref=hl" class="facebook-link"></a> -->
+        <a href="https://www.facebook.com/Beavertronics-Team-5970-453426894846186/?ref=hl"><img src="./assets/footer/facebook.webp"></a>
+        <a href="https://twitter.com/Beav5970"><img src="./assets/footer/twitter.webp"></a>
+        <a href="https://www.instagram.com/beavertonhigh.robotics/"><img src="./assets/footer/instagram.webp"></a>
+    </div>
+    <p id=footer-text><i>Developed by Ansh P & Collin W ● 2024</i></p>
+</footer>
+
+
 </html>

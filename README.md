@@ -1,2 +1,1 @@
-# SendOut
-sending things out to others
+Official website for the FIRST Robotics Team, 5970, Beavertronics!

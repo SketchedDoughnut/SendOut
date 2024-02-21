@@ -49,7 +49,9 @@ def grabInfo():
     eDiv('displayInfo', f'key: {key} \n token: {token}')
     eDiv('output', 'grabInfo/status: starting runBot function with asyncio', add=True)
     eDiv('output', f'--> token: {token}', add=True)
-    asyncio.create_task(runBot(token))
+    eDiv('output', f'    --> type: {type(token)}', add=True)
+    asyncio.create_task(runBot(str(token)))
+    eDiv('output', 'grabInfo/status: runBot asyncio loop started', add=True)
 
 
 async def runBot(token): 
@@ -59,18 +61,20 @@ async def runBot(token):
         loop = None
     if loop and loop.is_running():
         #print('Async event loop already running. Adding coroutine to the event loop.')
+        #eval(client.start(token))
+        tsk = loop.create_task(client.run(token)) 
         eDiv('output', 'runBot/status: async already running, adding crouton to event loop', add=True)
-        tsk = loop.create_task(client.start(token)) 
         
         # ^-- https://docs.python.org/3/library/asyncio-task.html#task-object
         # Optionally, a callback function can be executed when the coroutine completes
-        #tsk.add_done_callback(
-        #    print(f'Task done with result={t.result()}  << return val of main()'))
+        # tsk.add_done_callback(
+        #    print(f'Task done with result=()  << return val of main()'))
 
     else:
         #print('Starting new event loop')
+        #eval(client.start(token))
+        result = asyncio.run(client.run(token))
         eDiv('output', 'runBot/status: starting new event loop', add=True)
-        result = asyncio.run((client.start(token))) 
 
 
 def SSLsetup():
@@ -91,8 +95,11 @@ def eDiv(tag, input, add=False):
 
 
 def sysRun(event):
+    clear = True
+    if clear == True:
+        eDiv('output', " ")
     eDiv('output', 'sysRun/status: grabbing info', add=True)
     eDiv('inputPrompt', " ")
     grabInfo()
-    eDiv('output', '/status: setting up SSL', add=True)
-    SSLsetup()
+    # eDiv('output', 'sysRun/status: setting up SSL', add=True)
+    # SSLsetup()
